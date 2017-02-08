@@ -9,4 +9,4 @@ import Hello from './src/component/hello';
 const App = () =>
   <Hello />;
 
-AppRegistry.registerComponent('App', () => App);
+AppRegistry.registerComponent('QRGovRN', () => App);
