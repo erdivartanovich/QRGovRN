@@ -2,11 +2,11 @@ import React from 'react';
 
 import {
   AppRegistry,
-  Text
 } from 'react-native';
 
-const QRGovRn = () => 
-    <Text>Some Text</Text>;
+import Hello from './src/component/hello';
 
+const App = () =>
+  <Hello />;
 
-AppRegistry.registerComponent('QRGovRN', () => QRGovRN);
+AppRegistry.registerComponent('App', () => App);
