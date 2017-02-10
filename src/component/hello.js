@@ -1,12 +1,23 @@
 import React from 'react';
-
 import {
   Text,
-  View
+  View,
 } from 'react-native';
 
-export default () =>   
-    <View>
-      <Text>Some Text</Text>
-      <Text>Heloo somone</Text>
-    </View>;
+import { styles, panel1, panel2 } from '../styles/hello-style';
+
+const props = {
+  title: 'This is the title',
+  whatToSay: 'Hello World !'
+};
+
+export default () => 
+  <View>
+    <View style={panel1}>
+      <Text style={styles.title}> {props.title} </Text>
+    </View>
+    <View style={panel2}>
+      <Text> {props.whatToSay} </Text>
+    </View>
+  </View>;
+
