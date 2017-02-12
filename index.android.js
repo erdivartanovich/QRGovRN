@@ -9,7 +9,7 @@ import Header from './src/components/header';
 
 
 const App = () =>
-  <View>
+  <View style={{ flex: 1 }}>
     <Header />
     <Dashboard />
   </View>;

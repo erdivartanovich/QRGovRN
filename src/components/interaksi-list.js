@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {
   View,
-  ActivityIndicator
 } from 'react-native';
 
 import InteraksiDetail from './interaksi-detail';
+import Loading from './loading-indicator';
 
-const getDaftarInteraksi = new Promise((resolve) => {
+const getListInteraksi = new Promise((resolve) => {
     setTimeout(() => {
         resolve([
             {
@@ -23,26 +23,25 @@ const getDaftarInteraksi = new Promise((resolve) => {
 class InteraksiList extends Component {
 
     state = {
-        DaftarInteraksi: []
+        ListInteraksi: []
     };
 
     componentWillMount() {
-        getDaftarInteraksi.then((response => this.setState({ DaftarInteraksi: response })));
+        getListInteraksi.then((response => this.setState({ ListInteraksi: response })));
     }
     renderInteraksiList() {
-        return (this.state.DaftarInteraksi.length > 0
-            ? this.state.DaftarInteraksi.map(interaksi => 
+        return (this.state.ListInteraksi.length > 0
+            //if data not empty display the data
+            ? this.state.ListInteraksi.map(interaksi => 
               <InteraksiDetail key={interaksi.id} interaksi={interaksi} />)               
             : 
-            <ActivityIndicator
-                style={{ alignItems: 'center', justifyContent: 'center', padding: 20, height: 80 }} 
-                size='large'
-            />);
+            <Loading />
+        );            
     }
     render() {
         console.log(this.state);
         return (
-            <View>
+            <View style={{ flex: 1 }}>
                 {this.renderInteraksiList()}
             </View>
         );
