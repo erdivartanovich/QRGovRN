@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 
 import InteraksiDetail from './interaksi-detail';
-import Loading from './loading-indicator';
+import Spinner from './spinner;
 
 const getListInteraksi = new Promise((resolve) => {
     setTimeout(() => {
@@ -35,7 +35,7 @@ class InteraksiList extends Component {
             ? this.state.ListInteraksi.map(interaksi => 
               <InteraksiDetail key={interaksi.id} interaksi={interaksi} />)               
             : 
-            <Loading />
+            <Spinner />
         );            
     }
     render() {
