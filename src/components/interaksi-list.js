@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 
 import InteraksiDetail from './interaksi-detail';
-import Spinner from './spinner;
+import Spinner from './spinner';
 
 const getListInteraksi = new Promise((resolve) => {
     setTimeout(() => {
