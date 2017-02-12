@@ -1,12 +1,17 @@
 import React from 'react';
-
 import {
   AppRegistry,
+  View
 } from 'react-native';
 
-import Hello from './src/component/hello';
+import Dashboard from './src/components/dashboard';
+import Header from './src/components/header';
+
 
 const App = () =>
-  <Hello />;
+  <View>
+    <Header />
+    <Dashboard />
+  </View>;
 
 AppRegistry.registerComponent('QRGovRN', () => App);
